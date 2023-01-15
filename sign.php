@@ -1,3 +1,4 @@
+<?php  require_once 'backend/initialize.php' ?>
 <?php $pageTitle = 'Sign UP | Twitter';?>
 <?php require_once 'backend/shared/header.php';?>
 <section class="sign-container">
@@ -9,25 +10,19 @@
             </div>
                 <form action="sign.php" class="formField" method="POST">
                         <div class="form-group">
-                        <?php echo $account->getErrorMessage(Constant::$firstNameCharacters);   ?>
                             <label for="firstName">FirstName</label>
-                            <input type="text" name="firstName" id="firstName" value="<?php getInputValue("firstName"); ?>" autocomplete="off" required>
+                            <input type="text" name="firstName" id="firstName" autocomplete="off" required>
                         </div>
                         <div class="form-group">
-                        <?php echo $account->getErrorMessage(Constant::$lastNameCharacters);   ?>
                             <label for="lastName">LastName</label>
-                            <input type="text" name="lastName" id="lastName"value="<?php getInputValue("lastName"); ?>"  autocomplete="off" required>
+                            <input type="text" name="lastName" id="lastName" autocomplete="off" required>
                         </div> 
                         <div class="form-group">
-                        <?php echo $account->getErrorMessage(Constant::$emailInUse);   ?>
-                        <?php echo $account->getErrorMessage(Constant::$emailInValid);   ?>
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email" value="<?php getInputValue("email"); ?>"  autocomplete="off" required>
+                            <input type="email" name="email" id="email"  autocomplete="off" required>
                         </div> 
                         <div class="form-group">
-                        <?php echo $account->getErrorMessage(Constant::$passwordDoNotMatch);   ?>
-                        <?php echo $account->getErrorMessage(Constant::$passwordNotAlphanumeric);   ?>
-                        <?php echo $account->getErrorMessage(Constant::$passwordLength);   ?>
+    
                             <label for="pass">Password</label>
                             <input type="password" name="pass" id="pass" autocomplete="off" required>
                         </div>
@@ -52,4 +47,4 @@
                     </footer>
         </div>
     </section>
-    <script src="frontend/assets/js/showPassword.js"></script>
+    <script src="../Tweet/frontend/assets/js/showPassword.js"></script>

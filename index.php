@@ -1,4 +1,8 @@
 <?php 
+    require_once 'backend/initialize.php';
+?>
+<?php Database::instance();?>
+<?php 
     require_once 'backend/shared/header.php';
 ?>
 <section class="main-page">
