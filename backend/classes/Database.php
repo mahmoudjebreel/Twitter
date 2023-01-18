@@ -25,7 +25,24 @@ class Database
 
         return self::$instance;
     }
-}
+
+
+    public function __call($method,$args){
+        return call_user_func_array(array($this->pdo,$method),$args);
+    }
+
+    public static function query($query,$params=array()){
+        $stmt=self::instance()->prepare($query);
+        $stmt->execute($params);
+
+        if(explode(' ',$query)[0]=='SELECT'){
+            $data=$stmt->fetchAll();
+            return $data;
+        }
+    }
+    
+  }
+
 
 
 

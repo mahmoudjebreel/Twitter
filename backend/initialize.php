@@ -16,3 +16,5 @@ session_start();
 
 include_once 'functions.php';
 // $db = new Database;
+
+$account = new Account();
