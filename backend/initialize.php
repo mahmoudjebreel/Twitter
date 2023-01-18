@@ -14,7 +14,8 @@ spl_autoload_register(function($class){
 
 session_start();
 
-include_once 'functions.php';
 // $db = new Database;
+$account = new Account;
 
-$account = new Account();
+include_once 'functions.php';
+
